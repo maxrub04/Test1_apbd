@@ -1,0 +1,25 @@
+@tes1_host = http://localhost:5037
+
+### GET: /api/appointments/1
+GET {{tes1_host}}/api/appointments/1
+Accept: application/json
+
+### POST: /api/appointments
+POST {{tes1_host}}/api/appointments
+Content-Type: application/json
+
+{
+  "appointmentId": 10,
+  "patientId": 1,
+  "pwz": "PWZ5678",
+  "services": [
+    {
+      "serviceName": "Consultation",
+      "serviceFee": 110.00
+    },
+    {
+      "serviceName": "ECG",
+      "serviceFee": 70.00
+    }
+  ]
+}

@@ -1,7 +1,8 @@
-namespace test1_apbd.Services;
-
+using Microsoft.Data.SqlClient;
 using test1_apbd.Models.DTOs;
+using test1_apbd.Services;
 
+namespace GrupaA_Test.Services;
 
 public class AppointmentsService : IAppointmentsService
 {
