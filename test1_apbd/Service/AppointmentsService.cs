@@ -11,7 +11,7 @@ public class AppointmentsService : IAppointmentsService
 
     public async Task<AppointmentResponseDTO> GetAppointmentByIdAsync(int id)
     {
-        const string checkAppointmentSQL_Comamnd = "SELECT 1 FROM Appointment WHERE appoitment_id = @AppointmentId";
+        const string checkAppointmentSQL_Comamnd = "SELECT 1 FROM Appointment WHERE appointment_id = @AppointmentId";
         const string getAppointmentSQL_Command = """
                                                     SELECT a.date,
                                                         p.first_name,
@@ -22,14 +22,14 @@ public class AppointmentsService : IAppointmentsService
                                                     FROM Appointment a
                                                     JOIN Patient p ON a.patient_id = p.patient_id
                                                     JOIN Doctor d ON a.doctor_id = d.doctor_id
-                                                    WHERE a.appoitment_id = @AppointmentId;
+                                                    WHERE a.appointment_id = @AppointmentId;
                                                  """;
         const string getAppointmentServicesSQL_Command = """
                                                             SELECT s.name, 
                                                                     ass.service_fee
                                                             FROM Service s 
                                                             Inner JOIN Appointment_Service ass ON s.service_id = ass.service_id
-                                                            WHERE ass.appoitment_id = @AppointmentId;
+                                                            WHERE ass.appointment_id = @AppointmentId;
                                                          """;
 
         var appointmentServicesList = new List<AppointmentServiceDTO>();
