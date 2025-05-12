@@ -33,7 +33,7 @@ public class AppointmentsController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            return StatusCode(500, $"Server Error: {ex.Message}");
         }
     }
 
@@ -45,7 +45,7 @@ public class AppointmentsController : ControllerBase
         {
             // async
             await _appointmentsService.CreateAppointmentAsync(appointmentRequestDTO);
-            return StatusCode(StatusCodes.Status201Created, "Appointment created successfully.");
+            return StatusCode(StatusCodes.Status201Created, "Appointment has been created");
         }
         catch (ArgumentException ex)
         {
@@ -53,7 +53,7 @@ public class AppointmentsController : ControllerBase
         }
         catch (Exception ex)
         {
-            return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            return StatusCode(500, $"Server Error: {ex.Message}");
         }
     }
 }
