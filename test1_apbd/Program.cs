@@ -1,5 +1,4 @@
-﻿using GrupaA_Test.Services;
-using test1_apbd.Services;
+﻿using test1_apbd.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +11,6 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IAppointmentsService, AppointmentsService>();
 builder.Services.AddEndpointsApiExplorer();
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Configuration.GetConnectionString("Default");
 

@@ -2,12 +2,12 @@ using Microsoft.Data.SqlClient;
 using test1_apbd.Models.DTOs;
 using test1_apbd.Services;
 
-namespace GrupaA_Test.Services;
+namespace test1_apbd.Services;
 
 public class AppointmentsService : IAppointmentsService
 {
     private readonly string _connectionString =
-        "Data Source=localhost, 1433; User=SA; Password=yourStrong(!)Password; Initial Catalog=apbd; Integrated Security=False;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False";
+        "Data Source=localhost, 1433; User=SA; Password=Sima2021; Initial Catalog=apbd; Integrated Security=False;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False";
 
     public async Task<AppointmentResponseDTO> GetAppointmentByIdAsync(int id)
     {

@@ -1,25 +1,45 @@
-@tes1_host = http://localhost:5037
+@tes1_host = http://localhost:5000
 
-### GET: /api/appointments/1
+### GET: valid
 GET {{tes1_host}}/api/appointments/1
 Accept: application/json
 
-### POST: /api/appointments
+### GET: invalid
+GET {{tes1_host}}/api/appointments/999
+Accept: application/json
+
+### POST: valid
 POST {{tes1_host}}/api/appointments
 Content-Type: application/json
 
 {
-  "appointmentId": 10,
+  "appointmentId": 6,
   "patientId": 1,
-  "pwz": "PWZ5678",
+  "pwz": "PWZ1234",
   "services": [
     {
       "serviceName": "Consultation",
-      "serviceFee": 110.00
+      "serviceFee": 100.00
     },
     {
-      "serviceName": "ECG",
-      "serviceFee": 70.00
+      "serviceName": "Test",
+      "serviceFee": 50.00
+    }
+  ]
+}
+
+### POST: invalid patient
+POST {{tes1_host}}/api/appointments
+Content-Type: application/json
+
+{
+  "appointmentId": 6,
+  "patientId": 999,
+  "pwz": "PWZ1234",
+  "services": [
+    {
+      "serviceName": "Test",
+      "serviceFee": 50.00
     }
   ]
 }
