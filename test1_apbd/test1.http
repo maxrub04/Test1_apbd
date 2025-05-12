@@ -22,8 +22,8 @@ Content-Type: application/json
       "serviceFee": 100.00
     },
     {
-      "serviceName": "Test",
-      "serviceFee": 50.00
+      "serviceName": "X-Ray",
+      "serviceFee": 125.00
     }
   ]
 }
@@ -33,13 +33,13 @@ POST {{tes1_host}}/api/appointments
 Content-Type: application/json
 
 {
-  "appointmentId": 6,
-  "patientId": 999,
+  "appointmentId": 8,
+  "patientId": 3,
   "pwz": "PWZ1234",
   "services": [
     {
-      "serviceName": "Test",
-      "serviceFee": 50.00
+      "serviceName": "Vaccination",
+      "serviceFee": 60.00
     }
   ]
 }
